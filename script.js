@@ -122,13 +122,13 @@ while(!charTypeChosen){
     }   
   }
   if(!charTypeChosen){
-    alert("Please choose one or more character types"); 
+    alert("Please choose one or more character types!"); 
   }
   
+
 }
 
-
-
+return charType;
 
 }
 
