@@ -112,10 +112,22 @@ function getPasswordOptions() {
   }
 ]
 
+var charTypeChosen = false;
 //Prompts for password character types to include
-for (let i = 0; i < charType.length; i++){
-  charType[i].is_char_option = confirm("Would you like " + charType[i].charName + " in your password?");
+while(!charTypeChosen){
+  for (let i = 0; i < charType.length; i++){
+    charType[i].is_char_option = confirm("Would you like " + charType[i].charName + " in your password?");
+    if (charType[i].is_char_option){ //check if any option is chosen
+      charTypeChosen = true;
+    }   
+  }
+  if(!charTypeChosen){
+    alert("Please choose one or more character types"); 
+  }
+  
 }
+
+
 
 
 }
