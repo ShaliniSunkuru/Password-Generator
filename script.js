@@ -127,14 +127,13 @@ while(!charTypeChosen){
   
 
 }
-
 return charType;
 
 }
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-
+  return Math.floor(Math.random() * arr.length);
 }
 
 // Function to generate password with user input
@@ -156,10 +155,12 @@ function generatePassword() {
   }
 
   var numberOfCharTypes = chosenPasswordOptions.length;
+  console.log(numberOfCharTypes);
   var generatedPassword = "";
   for(let i = 0; i < passwordLength; i++){
-    generatePassword += getRandom(chosenPasswordOptions[Math.floor((Math.random() * numberOfCharTypes))].charArr);
+    generatedPassword += getRandom(chosenPasswordOptions[Math.floor((Math.random() * numberOfCharTypes))].charArr);
   }
+
 return generatedPassword;
 }
 
