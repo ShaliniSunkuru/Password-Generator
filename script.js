@@ -90,7 +90,29 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  
+  var charType = [{
+    charName: "special characters",
+    charArr: specialCharacters,
+    is_char_option: false
+  },
+  {
+    charName: "numeric characters",
+    charArr: numericCharacters,
+    is_char_option: false
+  },
+  {
+    charName: "lower case characters",
+    charArr: lowerCasedCharacters,
+    is_char_option: false
+  },
+  {
+    charName: "upper case characters",
+    charArr: upperCasedCharacters,
+    is_char_option: false
+  }
+]
+
+
 }
 
 // Function for getting a random element from an array
@@ -104,6 +126,9 @@ function generatePassword() {
   var passwordLength = prompt("Enter the length of the password(between 8 and 128)");
   while (passwordLength < 8 || passwordLength > 128){
     passwordLength = prompt("Please enter length between 8 and 128");
+  }
+  for(let i = 0; i < passwordLength; i++){
+    
   }
 
 }
