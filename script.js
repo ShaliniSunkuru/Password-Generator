@@ -145,6 +145,16 @@ function generatePassword() {
     passwordLength = prompt("Please enter length between 8 and 128");
   }
   var passwordOptions = getPasswordOptions();
+  
+  //array of chosen character types for password options
+  var chosenPasswordOptions = [];
+
+  for(let i = 0; i < passwordOptions.length; i++){
+    if (passwordOptions[i].is_char_option){
+      chosenPasswordOptions.push(passwordOptions[i]);
+    }
+  }
+
   for(let i = 0; i < passwordLength; i++){
     
   }
