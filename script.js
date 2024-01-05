@@ -155,10 +155,12 @@ function generatePassword() {
     }
   }
 
+  var numberOfCharTypes = chosenPasswordOptions.length;
+  var generatedPassword = "";
   for(let i = 0; i < passwordLength; i++){
-    
+    generatePassword += getRandom(chosenPasswordOptions[Math.floor((Math.random() * numberOfCharTypes))].charArr);
   }
-
+return generatedPassword;
 }
 
 // Get references to the #generate element
