@@ -112,6 +112,11 @@ function getPasswordOptions() {
   }
 ]
 
+//Prompts for password character types to include
+for (let i = 0; i < charType.length; i++){
+  charType[i].is_char_option = confirm("Would you like " + charType[i].charName + " in your password?");
+}
+
 
 }
 
@@ -127,6 +132,7 @@ function generatePassword() {
   while (passwordLength < 8 || passwordLength > 128){
     passwordLength = prompt("Please enter length between 8 and 128");
   }
+  var passwordOptions = getPasswordOptions();
   for(let i = 0; i < passwordLength; i++){
     
   }
