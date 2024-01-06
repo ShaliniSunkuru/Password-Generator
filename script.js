@@ -90,6 +90,8 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
+
+  //Array of objects for character types to be includeed in password
   var charType = [{
     charName: "special characters",
     charArr: specialCharacters,
@@ -123,10 +125,9 @@ while(!charTypeChosen){
   }
   if(!charTypeChosen){
     alert("Please choose one or more character types!"); 
-  }
-  
-
+  }  
 }
+
 return charType;
 
 }
@@ -140,7 +141,7 @@ function getRandom(arr) {
 function generatePassword() {
   //prompt for length of password
   var passwordLength = prompt("Enter the length of the password(between 8 and 128)");
-  while (passwordLength < 8 || passwordLength > 128){
+  while (passwordLength < 8 || passwordLength > 128){//to validate length 
     passwordLength = prompt("Please enter length between 8 and 128");
   }
   var passwordOptions = getPasswordOptions();
@@ -154,10 +155,10 @@ function generatePassword() {
     }
   }
 
-  var numberOfCharTypes = chosenPasswordOptions.length;
+  //Generated password based on chosen char types
   var generatedPassword = "";
   for(let i = 0; i < passwordLength; i++){
-    generatedPassword += getRandom(chosenPasswordOptions[Math.floor(Math.random() * numberOfCharTypes)].charArr);
+    generatedPassword += getRandom(chosenPasswordOptions[Math.floor(Math.random() * chosenPasswordOptions.length)].charArr);
   }
 return generatedPassword;
 }
