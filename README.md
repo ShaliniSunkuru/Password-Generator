@@ -41,7 +41,7 @@ I can see a password generated based on the chosen length and character types\
 
 ## Screenshot
 
-Here is a screenshot of the data displayed on the console.
+Here is a screenshot of the application in a browser.
 
 ![Screenshot of password generator app with a password of 12 characters generated](./images/screenshot.png)
 
